@@ -89,7 +89,7 @@ class Igrac(Agent):
         
         def dohvati_kartu_za_treceg_igraca(self, moguce_karte, prva_karta, druga_karta):
             if(len(moguce_karte)==1):
-                return self.odaberi_nasumicnu_mogucu_kartu(moguce_karte)
+                return moguce_karte[0]
             pratim_zog=self.pratim_li_zog(moguce_karte, prva_karta)
             moj_tim_gubi=self.nova_karta_jaca(druga_karta, prva_karta)
             if pratim_zog==False and moj_tim_gubi==True:
@@ -117,7 +117,7 @@ class Igrac(Agent):
         
         def dohvati_kartu_za_cetvrtog_igraca(self, moguce_karte, prva_karta, druga_karta, treca_karta):
             if(len(moguce_karte)==1):
-                return self.odaberi_nasumicnu_mogucu_kartu(moguce_karte)
+                return moguce_karte[0]
             pratim_zog=self.pratim_li_zog(moguce_karte, prva_karta)
             moj_tim_gubi=self.gubi_li_moj_tim(prva_karta, druga_karta, treca_karta)
             if pratim_zog==False and moj_tim_gubi==True:
