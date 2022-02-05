@@ -33,9 +33,6 @@ def main():
         "-pwd4", type=str, help="Lozinka 4. agenta", default="secret")
     args = parser.parse_args()
 
-    #agentautomat = AgentAutomat(args.jid, args.pwd)
-    #igraci_imena=("agent@rec.foi.hr", "receiver@rec.foi.hr", "sender@rec.foi.hr", "lukamrko@rec.foi.hr")
-    #igraci_sifra=("tajna", "secret", "secret", "zmijavci")
     tim1=Tim("timA")
     tim2=Tim("timB")
     timovi=(tim1, tim2)
@@ -56,11 +53,6 @@ def main():
     igrac2.ucitaj_pocetne_postavke(igrac2.jid.bare(), tim2, igrac3)
     igrac3.ucitaj_pocetne_postavke(igrac3.jid.bare(), tim1, igrac4)
     igrac4.ucitaj_pocetne_postavke(igrac4.jid.bare(), tim2, igrac1)
-    #pokretanje1.result()
-    #pokretanje2.result()
-    #pokretanje3.result()
-    #pokretanje4.result()
-
 
     time.sleep(35)
 
@@ -69,8 +61,6 @@ def main():
     trenutni_igrac=igrac1
     igra_gotova=False
     partija=1
-
-
 
     while(igra_gotova==False):
         def prikazi_karte_igraca(igrac):
@@ -165,7 +155,6 @@ def main():
             karte_ruke[2].igrac.obradi_informacije_nakon_ruke(bacene_karte,  cetvrti_igrac_pratio, True, drugi_igrac_pratio)
             karte_ruke[3].igrac.obradi_informacije_nakon_ruke(bacene_karte, True, drugi_igrac_pratio, treci_igrac_pratio)
 
-
         dek=dohvati_dek()
         for igrac in igraci:
             igrac.dodaj_karte(dohvati_10_nasumicnih_karti_iz_deka())
@@ -182,8 +171,6 @@ def main():
             moguce_karte=[]
             redoslijed=1
 
-            #print(f"Prvi igrac je {trenutni_igrac.ime}! Moguće karte za baciti su!:", end=" ")
-            #ispisi_moguce_karte(moguce_karte)
             karta=trenutni_igrac.igraj_i_obradi(redoslijed)
             prva_karta=karta
             karte_ruke.append(Karta_ruke(redoslijed, trenutni_igrac, karta.oznaka))
@@ -239,15 +226,12 @@ def main():
         time.sleep(3)
         partija+=1
 
-
     print("Hvala na igranju :)")
     igrac1.stop()
     igrac2.stop()
     igrac3.stop()
     igrac4.stop()
     quit_spade()
-
-
 
 if __name__=='__main__':
     main()
