@@ -63,13 +63,6 @@ def main():
     partija=1
 
     while(igra_gotova==False):
-        def prikazi_karte_igraca(igrac):
-            print(f"{igrac.ime}: ", end="")
-            igrac.karte.sort(key=lambda x: x.zog).sort(key=lambda x: x.broj)
-            for karta in igrac.karte:
-                print(f"{karta.oznaka},",end=" ")
-            print()
-
         def prikazi_karte_svih_igraca():
             for igrac in igraci:
                 print(f"{igrac.ime}: ", end="")
@@ -116,27 +109,7 @@ def main():
             if(drugi_broj>prvi_broj):
                 return False
             return True
-
-        def ispisi_moguce_karte(karte):
-            for karta in karte:
-                print(f"{karta.oznaka}",end=" ")
-            print()
-
-        def odredi_moguce_karte(prva_karta, karte):
-            moguce_karte=[]
-            for karta in karte:
-                if(karta.oznaka[0]==prva_karta[0]):
-                    moguce_karte.append(karta)
-            if(len(moguce_karte)==0):
-                moguce_karte=karte
-            return moguce_karte
-
-        def odaberi_nasumicnu_mogucu_kartu(moguce_karte):
-            nasumican_broj=random.randrange(0, len(moguce_karte))
-            karta=moguce_karte[nasumican_broj].oznaka
-            print(f"Bacam {karta}")
-            return karta
-        
+       
         def je_li_igrac_pratio_prvu_kartu(prva_karta, bacena_karta):
             if prva_karta[0]==bacena_karta[0]:
                 return True
@@ -168,7 +141,6 @@ def main():
             prikazi_karte_svih_igraca()
 
             karte_ruke=[] # Oblik: Karta_ruke
-            moguce_karte=[]
             redoslijed=1
 
             karta=trenutni_igrac.igraj_i_obradi(redoslijed)
