@@ -83,12 +83,12 @@ def main():
             najjaca_karta=karte_ruke[0].karta
             bele=0
             for karta_ruke in karte_ruke:
-                print(karta_ruke.karta, end="")
+                print(karta_ruke.karta.oznaka, end="")
                 if(karta_ruke.redoslijed!=4):
                     print("->", end="")
-                if prva_karta_jaca(karta_ruke.karta, najjaca_karta):
+                if prva_karta_jaca(karta_ruke.karta.oznaka, najjaca_karta.oznaka):
                     najjaca_karta=karta_ruke.karta
-                broj_karte=int(karta_ruke.karta[1:])
+                broj_karte=int(karta_ruke.karta.broj)
                 if(broj_karte in (3, 2, 13, 12, 11)):
                     bele+=1
                 elif(broj_karte==1):
@@ -111,7 +111,7 @@ def main():
             return True
        
         def je_li_igrac_pratio_prvu_kartu(prva_karta, bacena_karta):
-            if prva_karta[0]==bacena_karta[0]:
+            if prva_karta.zog==bacena_karta.zog:
                 return True
             return False
 
@@ -145,27 +145,27 @@ def main():
 
             karta=trenutni_igrac.igraj_i_obradi(redoslijed)
             prva_karta=karta
-            karte_ruke.append(Karta_ruke(redoslijed, trenutni_igrac, karta.oznaka))
+            karte_ruke.append(Karta_ruke(redoslijed, trenutni_igrac, karta))
             trenutni_igrac=trenutni_igrac.iduci_igrac
             redoslijed+=1
             time.sleep(0.1)
 
             karta=trenutni_igrac.igraj_i_obradi(redoslijed, prva_karta)
             druga_karta=karta
-            karte_ruke.append(Karta_ruke(redoslijed, trenutni_igrac, karta.oznaka))
+            karte_ruke.append(Karta_ruke(redoslijed, trenutni_igrac, karta))
             trenutni_igrac=trenutni_igrac.iduci_igrac
             redoslijed+=1
             time.sleep(0.1)
 
             karta=trenutni_igrac.igraj_i_obradi(redoslijed, prva_karta, druga_karta)
             treca_karta=karta
-            karte_ruke.append(Karta_ruke(redoslijed, trenutni_igrac, karta.oznaka))
+            karte_ruke.append(Karta_ruke(redoslijed, trenutni_igrac, karta))
             trenutni_igrac=trenutni_igrac.iduci_igrac
             redoslijed+=1
             time.sleep(0.1)
 
             karta=trenutni_igrac.igraj_i_obradi(redoslijed, prva_karta, druga_karta, treca_karta)
-            karte_ruke.append(Karta_ruke(redoslijed, trenutni_igrac, karta.oznaka))
+            karte_ruke.append(Karta_ruke(redoslijed, trenutni_igrac, karta))
             time.sleep(0.1)
 
             if(i==10):
