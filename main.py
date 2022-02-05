@@ -65,7 +65,7 @@ def main():
     while(igra_gotova==False):
         def prikazi_karte_svih_igraca():
             for igrac in igraci:
-                print(f"{igrac.ime}: ", end="")
+                print(f"{igrac.jid}: ", end="")
                 igrac.karte.sort(key=lambda x: (x.zog, x.broj))
                 for karta in igrac.karte:
                     print(f"{karta.oznaka},",end=" ")
@@ -173,7 +173,7 @@ def main():
             odredi_status_igraca_i_karti(karte_ruke)
             trenutni_igrac=zavrsi_krug(karte_ruke, zadnja)
 
-            print(f"Najacu kartu u trenutnj ruci je imao {trenutni_igrac.ime}\n")
+            print(f"Najacu kartu u trenutnj ruci je imao {trenutni_igrac.jid}\n")
             time.sleep(1)
             karte_ruke.clear()
 
