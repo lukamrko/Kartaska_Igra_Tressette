@@ -304,8 +304,7 @@ class Igrac(Agent):
         self.add_behaviour(fsm)
 
 
-    def ucitaj_pocetne_postavke(self, ime, tim, igrac):
-        self.ime=ime
+    def ucitaj_pocetne_postavke(self, tim, igrac):
         self.tim=tim
         self.karte=[]
         self.iduci_igrac=igrac

@@ -49,10 +49,10 @@ def main():
     igrac4 = Igrac(args.jid4, args.pwd4)
     pokretanje4=igrac4.start()
 
-    igrac1.ucitaj_pocetne_postavke(igrac1.jid.bare(), tim1, igrac2)
-    igrac2.ucitaj_pocetne_postavke(igrac2.jid.bare(), tim2, igrac3)
-    igrac3.ucitaj_pocetne_postavke(igrac3.jid.bare(), tim1, igrac4)
-    igrac4.ucitaj_pocetne_postavke(igrac4.jid.bare(), tim2, igrac1)
+    igrac1.ucitaj_pocetne_postavke(tim1, igrac2)
+    igrac2.ucitaj_pocetne_postavke(tim2, igrac3)
+    igrac3.ucitaj_pocetne_postavke(tim1, igrac4)
+    igrac4.ucitaj_pocetne_postavke(tim2, igrac1)
 
     time.sleep(35)
 
