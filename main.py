@@ -166,7 +166,6 @@ def main():
 
             karta=trenutni_igrac.igraj_i_obradi(redoslijed, prva_karta, druga_karta, treca_karta)
             karte_ruke.append(Karta_ruke(redoslijed, trenutni_igrac, karta.oznaka))
-            trenutni_igrac=trenutni_igrac.iduci_igrac
             time.sleep(0.1)
 
             if(i==10):
