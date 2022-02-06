@@ -10,3 +10,6 @@ Program može primiti i određene opcionalne paramtere, a to su:
 - -pwd3 -> zaporka trećeg agenta
 - -jid4 -> jid četvrtog agenta
 - -pwd4 -> zaporka četvrtog agenta
+
+UPOZORENJE:
+Program se ponekad ne uspije izvršiti tijekom prvog izvršavanja te ga je potrebno pokrenuti ponovno (rijetko kad i dvaput) da bi pravilno radio.
