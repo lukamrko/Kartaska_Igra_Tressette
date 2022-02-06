@@ -137,8 +137,9 @@ class Igrac(Agent):
             return self.baci_najjacu_mogucu_kartu(moguce_karte)
 
         def postoji_sigurni_as_za_treceg_igraca(self, moguce_karte, prva_karta, druga_karta):
-            if druga_karta.broj==1 or druga_karta.broj==2:
-                return ""
+            if druga_karta.zog==prva_karta.zog:
+                if druga_karta.broj==1 or druga_karta.broj==2:
+                    return ""
             mojAs=""
             for moj_as in moguce_karte:
                 if moj_as.broj==1:
