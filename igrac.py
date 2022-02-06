@@ -134,7 +134,7 @@ class Igrac(Agent):
                 if mogu_dobiti==True:
                     return self.baci_najvredniju_dobitnu_kartu(moguce_karte, karta_za_dobiti)
                 return self.baci_najnizu_mogucu_kartu(moguce_karte)
-            return self.baci_najjacu_mogucu_kartu(moguce_karte)
+            return self.baci_najvredniju_mogucu_kartu(moguce_karte)
 
         def postoji_sigurni_as_za_treceg_igraca(self, moguce_karte, prva_karta, druga_karta):
             if druga_karta.zog==prva_karta.zog:
